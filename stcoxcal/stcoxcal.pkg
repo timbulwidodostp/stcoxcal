@@ -1,4 +1,13 @@
-D 'eventbaseline': Eventbaseline Correct event study after xthdidregress Use eventbaseline With STATA 19
+D 'stcoxcal': Calibration plots and tests for Cox proportional hazards model Use stcoxcal With STATA 19
 D
-F eventbaseline.ado
-F eventbaseline.sthlp
+F grc1leg.ado
+F running.ado
+F running.sthlp
+F stcoxcal.ado
+F stcoxcal.sthlp
+F stpci.ado
+F stpci.hlp
+F stpmean.ado
+F stpmean.hlp
+F stpsurv.ado
+F stpsurv.hlp
