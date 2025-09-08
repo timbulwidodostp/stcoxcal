@@ -1,0 +1,73 @@
+{smcl}
+{* 27January2010}{...}
+{cmd:help stpci}{right: ({browse "http://www.stata-journal.com/article.html?article=st0202":SJ10-3: st0202})}
+{hline}
+
+{title:Title}
+
+{p2colset 5 14 16 2}{...}
+{p2col :{hi:stpci} {hline 2}}Pseudo-observations for the cumulative incidence
+function under competing risks{p_end}
+{p2colreset}{...}
+
+
+{title:Syntax}
+
+{p 8 14 2}
+{cmd:stpci}
+{it:varname}
+{ifin}{cmd:,}
+{cmdab:a:t(}{it:numlist}{cmd:)} 
+[{cmdab:g:enerate(}{it:string}{cmd:)}]
+          
+
+{title:Description}
+
+{pstd} {cmd:stpci} generates pseudo-observations for the cumulative incidence
+function in competing risks.  The pseudo-observations are to be used for
+analysis in a generalized linear model.  The program presumes that the data
+have been declared to be survival-time data using the {cmd:stset} command.
+Frequency weights are allowed in the {cmd:stset} command.
+
+{pstd} A variable, {it:varname}, should be given indicating by the value 1 the
+censoring times specified in the {cmd:stset} command that are competing
+events.
+
+{pstd} The pseudovalues are by default saved in the {cmd:pseudo} variable.  If
+more than one time point is specified, then the pseudovalues are by default
+saved in {cmd:pseudo1}, {cmd:pseudo2}, ....
+
+
+{title:Options}
+
+{phang}{opt at(numlist)} specifies the time points in ascending order of which
+pseudovalues should be computed.  {cmd:at()} is required.
+
+{phang}{opt generate(string)} specifies a variable name for the
+pseudo-observations.  The default is {cmd:generate(pseudo)}.
+
+
+{title:Example}
+
+{pstd}{cmd:. stpci cevents, at(50)}
+
+
+{title:Authors}
+
+{pstd}Erik T. Parner{p_end}
+{pstd}Department of Biostatistics{p_end}
+{pstd}University of Aarhus{p_end}
+{pstd}parner@biostat.au.dk{p_end}
+
+{pstd}Per K. Andersen{p_end}
+{pstd}Department of Biostatistics{p_end}
+{pstd}University of Copenhagen{p_end}
+
+
+{title:Also see}
+
+{p 4 14 2}
+Article:  {it:Stata Journal}, volume 10, number 3: {browse "http://www.stata-journal.com/article.html?article=st0202":st0202}
+
+{p 4 14 2}
+{space 3}Help:  {helpb stpsurv}, {helpb stpmean} (if installed){p_end}

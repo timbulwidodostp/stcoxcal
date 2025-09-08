@@ -1,0 +1,4 @@
+D 'eventbaseline': Eventbaseline Correct event study after xthdidregress Use eventbaseline With STATA 19
+D
+F eventbaseline.ado
+F eventbaseline.sthlp
